@@ -5,7 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Catálogo Emprendimiento</title>
       <link rel="stylesheet" href="styles.css" />
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
    </head>
    <body>
@@ -1137,21 +1136,5 @@
       <button id="btnSubir" title="Volver arriba">SUBIR</button>
       <button id="btnBajar" title="Bajar">BAJAR</button>
       <script src="index.js"></script>
-       <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          const urlParams = new URLSearchParams(window.location.search);
-          const hash = window.location.hash;
-          
-          if (urlParams.get('token') || hash.includes('invitation_token') || hash.includes('invite_token')) {
-            window.netlifyIdentity.open('signup');
-          }
-        }
-      });
-      
-      window.netlifyIdentity.init();
-    }
-  </script>
    </body>
 </html>
