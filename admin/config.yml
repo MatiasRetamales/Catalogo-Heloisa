@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "principales2" # Carpeta donde se subirán las imágenes
+public_folder: "/principales2"
+
+collections:
+  - name: "carrusel"
+    label: "Carrusel"
+    folder: "principales2"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Imagen"
+        name: "imagen"
+        widget: "image"
+      - label: "Texto alternativo"
+        name: "alt"
+        widget: "string"
