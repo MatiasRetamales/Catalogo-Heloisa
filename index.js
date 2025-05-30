@@ -202,3 +202,57 @@ fetch('https://opensheet.elk.sh/1Z0QMIwO6au52CieJTlbuxpy1A7SGDBePsKFJxlvz6DE/car
 
 
 
+
+
+
+
+
+
+
+fetch('https://opensheet.elk.sh/1Z0QMIwO6au52CieJTlbuxpy1A7SGDBePsKFJxlvz6DE/precios')
+  .then(res => res.json())
+  .then(data => {
+    // Crea un mapa para buscar rápido por nombre
+    const preciosPorNombre = {};
+    data.forEach(row => {
+      preciosPorNombre[row.Nombre?.trim()] = row;
+    });
+
+    // Selecciona todas las tablas relevantes
+    document.querySelectorAll('table').forEach(tabla => {
+      tabla.querySelectorAll('tbody tr').forEach(tr => {
+        const th = tr.querySelector('th');
+        if (!th) return;
+        const nombre = th.textContent.trim();
+        const filaSheet = preciosPorNombre[nombre];
+        if (filaSheet) {
+          // Actualiza cada celda de precio según el orden de columnas
+          const celdas = tr.querySelectorAll('td');
+          const columnas = [
+            '16 cm (8 personas)',
+            '20 cm (10 personas)',
+            '22 cm (10-15 personas)',
+            '24 cm (15-20 personas)',
+            '26 cm (25-30 personas)',
+            '33 cm (35-40 personas)'
+          ];
+          celdas.forEach((td, i) => {
+            if (filaSheet[columnas[i]]) {
+              td.textContent = filaSheet[columnas[i]];
+            }
+          });
+        }
+      });
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
