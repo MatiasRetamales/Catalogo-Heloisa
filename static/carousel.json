@@ -1,3 +1,8 @@
 {
-  "imagenes": []
+  "imagenes": [
+    {
+      "imagen": "/Principales2/amapola.jpeg",
+      "alt": "ngv"
+    }
+  ]
 }
