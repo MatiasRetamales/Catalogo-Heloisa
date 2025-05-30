@@ -1,0 +1,91 @@
+ <div class="referenciales">
+         <button class="carrusel-btn prev">&#8592;</button>
+         <div class="carrusel-imagenes">
+            <!-- Sección: Tortas de niño -->
+            <div class="carrusel-label">Tortas Infantiles</div>
+            <img src="TortasPrincipales/niño1.jpeg" alt="Torta Niño 1">
+            <img src="TortasPrincipales/niño2.jpeg" alt="Torta Niño 2">
+            <img src="TortasPrincipales/niño3.jpeg" alt="Torta Niño 3">
+            <img src="TortasPrincipales/niño4.jpeg" alt="Torta Niño 4">
+            <img src="TortasPrincipales/niño6.jpeg" alt="Torta Niño 6">
+            <img src="TortasPrincipales/niño7.jpeg" alt="Torta Niño 7">
+            <img src="TortasPrincipales/niño8.jpeg" alt="Torta Niño 8">
+            <img src="TortasPrincipales/niño9.jpeg" alt="Torta Niño 9">
+            <img src="TortasPrincipales/niño10.jpeg" alt="Torta Niño 10">
+            <img src="TortasPrincipales/niño11.jpeg" alt="Torta Niño 11">
+            <img src="TortasPrincipales/niño12.jpeg" alt="Torta Niño 12">
+            <!-- Sección: Tortas comestibles -->
+            <div class="carrusel-label">Tortas Foto Comestibles</div>
+            <img src="TortasPrincipales/comestible1.jpeg" alt="Torta comestible 1">
+            <img src="TortasPrincipales/comestible2.jpeg" alt="Torta comestible 2">
+            <img src="TortasPrincipales/comestible3.jpeg" alt="Torta comestible 3">
+            <img src="TortasPrincipales/comestible5.jpeg" alt="Torta comestible 5">
+            <img src="TortasPrincipales/comestible6.jpeg" alt="Torta comestible 6">
+            <img src="TortasPrincipales/comestible7.jpeg" alt="Torta comestible 7">
+            <img src="TortasPrincipales/comestible8.jpeg" alt="Torta comestible 8">
+            <img src="TortasPrincipales/comestible9.jpeg" alt="Torta comestible 9">
+            <img src="TortasPrincipales/comestible10.jpeg" alt="Torta comestible 10">
+            <img src="TortasPrincipales/comestible11.jpeg" alt="Torta comestible 11">
+            <img src="TortasPrincipales/comestible12.jpeg" alt="Torta comestible 12">
+            <img src="TortasPrincipales/comestible13.jpeg" alt="Torta comestible 13">
+            <!-- Sección: Adultos -->
+            <div class="carrusel-label">Tortas adultos</div>
+            <img src="TortasPrincipales/adulto1.jpeg" alt="Torta adulto 1">
+            <img src="TortasPrincipales/adulto3.jpeg" alt="Torta adulto 3">
+            <img src="TortasPrincipales/adulto5.jpeg" alt="Torta adulto 5">
+            <img src="TortasPrincipales/adulto7.jpeg" alt="Torta adulto 7">
+            <img src="TortasPrincipales/adulto8.jpeg" alt="Torta adulto 8">
+            <img src="TortasPrincipales/adulto9.jpeg" alt="Torta adulto 9">
+            <img src="TortasPrincipales/adulto10.jpeg" alt="Torta adulto 10">
+            <img src="TortasPrincipales/adulto11.jpeg" alt="Torta adulto 11">
+            <img src="TortasPrincipales/adulto12.jpeg" alt="Torta adulto 12">
+            <img src="TortasPrincipales/adulto13.jpeg" alt="Torta adulto 13">
+            <img src="TortasPrincipales/adulto14.jpeg" alt="Torta adulto 14">
+            <img src="TortasPrincipales/adulto15.jpeg" alt="Torta adulto 15">
+            <img src="TortasPrincipales/adulto16.jpeg" alt="Torta adulto 16">
+            <img src="TortasPrincipales/adulto18.jpeg" alt="Torta adulto 18">
+            <img src="TortasPrincipales/adulto19.jpeg" alt="Torta adulto 19">
+            <img src="TortasPrincipales/adulto20.jpeg" alt="Torta adulto 20">
+            <img src="TortasPrincipales/adulto21.jpeg" alt="Torta adulto 21">
+            <!-- Sección: Baby Shower -->
+            <div class="carrusel-label">Tortas Baby Shower</div>
+            <img src="TortasPrincipales/baby2.jpeg" alt="Torta Baby Shower 2">
+            <img src="TortasPrincipales/baby3.jpeg" alt="Torta Baby Shower 3">
+            <img src="TortasPrincipales/baby4.jpeg" alt="Torta Baby Shower 4">
+            <img src="TortasPrincipales/baby5.jpeg" alt="Torta Baby Shower 5">
+            <img src="TortasPrincipales/baby6.jpeg" alt="Torta Baby Shower 6">
+            <img src="TortasPrincipales/baby8.jpeg" alt="Torta Baby Shower 8">
+            <img src="TortasPrincipales/baby9.jpeg" alt="Torta Baby Shower 9">
+            <img src="TortasPrincipales/baby10.jpeg" alt="Torta Baby Shower 10">
+            <img src="TortasPrincipales/baby11.jpeg" alt="Torta Baby Shower 11">
+            <!-- Sección: Bautizo -->
+            <div class="carrusel-label">Tortas Bautizos</div>
+            <img src="TortasPrincipales/bautizo1.jpeg" alt="Torta Bautizo 1">
+            <img src="TortasPrincipales/bautizo2.jpeg" alt="Torta Bautizo 2">
+            <img src="TortasPrincipales/bautizo3.jpeg" alt="Torta Bautizo 3">
+            <img src="TortasPrincipales/bautizo4.jpeg" alt="Torta Bautizo 4">
+            <img src="TortasPrincipales/bautizo9.jpeg" alt="Torta Bautizo 9">
+            <img src="TortasPrincipales/bautizo10.jpeg" alt="Torta Bautizo 10">
+            <img src="TortasPrincipales/bautizo11.jpeg" alt="Torta Bautizo 11">
+            <img src="TortasPrincipales/bautizo12.jpeg" alt="Torta Bautizo 12">
+            <!-- Sección: Matrimonio -->
+            <div class="carrusel-label">Tortas Matrimonios</div>
+            <img src="TortasPrincipales/matri1.jpeg" alt="Torta Matrimonio 1">
+            <img src="TortasPrincipales/matri2.jpeg" alt="Torta Matrimonio 2">
+            <img src="TortasPrincipales/matri3.jpeg" alt="Torta Matrimonio 3">
+            <img src="TortasPrincipales/matri4.jpeg" alt="Torta Matrimonio 4">
+            <img src="TortasPrincipales/matri6.jpeg" alt="Torta Matrimonio 6">
+            <img src="TortasPrincipales/matri7.jpeg" alt="Torta Matrimonio 7">
+            <img src="TortasPrincipales/matri9.jpeg" alt="Torta Matrimonio 9">
+            <img src="TortasPrincipales/matri11.jpeg" alt="Torta Matrimonio 11">
+            <img src="TortasPrincipales/matri12.jpeg" alt="Torta Matrimonio 12">
+            <img src="TortasPrincipales/matri13.jpeg" alt="Torta Matrimonio 13">
+            <img src="TortasPrincipales/matri14.jpeg" alt="Torta Matrimonio 14">
+            <img src="TortasPrincipales/matri17.jpeg" alt="Torta Matrimonio 17">
+            <img src="TortasPrincipales/matri18.jpeg" alt="Torta Matrimonio 18">
+            <img src="TortasPrincipales/matri20.jpeg" alt="Torta Matrimonio 20">
+            <img src="TortasPrincipales/matri21.jpeg" alt="Torta Matrimonio 21">
+            <img src="TortasPrincipales/matri22.jpeg" alt="Torta Matrimonio 22">
+         </div>
+         <button class="carrusel-btn next">&#8594;</button>
+      </div>
