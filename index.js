@@ -173,7 +173,24 @@ btnBajar.addEventListener('touchend', function() {
 
 
 
-
+fetch('https://opensheet.elk.sh/1Z0QMIwO6au52CieJTlbuxpy1A7SGDBePsKFJxlvz6DE/carrusel')
+  .then(res => res.json())
+  .then(data => {
+    const carrusel = document.querySelector('.carrusel-imagenes');
+    data.forEach(row => {
+      if(row.url && row.nombre) {
+        const img = document.createElement('img');
+        img.src = row.url;
+        img.alt = row.nombre;
+        img.style.maxWidth = "250px";
+        img.style.margin = "10px";
+        img.style.display = "inline-block";
+        carrusel.appendChild(img); // Se agregan al final
+      }
+    });
+    // Si tu carrusel usa scroll, recalcula el ancho aquí si es necesario
+    setImagenAncho && setImagenAncho();
+  });
 
 
 
