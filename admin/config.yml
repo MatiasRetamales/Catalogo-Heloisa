@@ -2,20 +2,20 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "principales2"
-public_folder: "/principales2"
+media_folder: "static/Principales2"
+public_folder: "/Principales2"
 
 collections:
   - name: "carrusel"
     label: "Carrusel"
-    folder: "principales2"
-    create: true
-    slug: "imagen-{{slug}}"
-    fields:
-      - label: "Imagen"
-        name: "imagen"
-        widget: "image"
-      - label: "Texto alternativo"
-        name: "alt"
-        widget: "string"
-        default: "Imagen del carrusel"
+    files:
+      - label: "Imágenes del Carrusel"
+        name: "imagenes"
+        file: "static/carousel.json"
+        fields:
+          - label: "Imágenes"
+            name: "imagenes"
+            widget: "list"
+            fields:
+              - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Texto alternativo", name: "alt", widget: "string" }
