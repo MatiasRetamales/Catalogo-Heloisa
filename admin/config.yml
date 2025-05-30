@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/Principales2"
+media_folder: "/Principales2"
 public_folder: "/Principales2"
 
 collections:
