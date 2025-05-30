@@ -176,21 +176,6 @@ btnBajar.addEventListener('touchend', function() {
 
 
 
-fetch('/carousel.json')
-  .then(res => res.json())
-  .then(data => {
-    const carrusel = document.querySelector('.carrusel-imagenes');
-    data.imagenes.forEach(item => {
-      const img = document.createElement('img');
-      img.src = item.imagen;
-      img.alt = item.alt;
-      img.style.maxWidth = "250px";
-      img.style.margin = "10px";
-      img.style.display = "inline-block";
-      carrusel.appendChild(img);
-    });
-  });
-
 
 
 
