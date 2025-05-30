@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "principales2" # Carpeta donde se subirán las imágenes
+media_folder: "principales2"
 public_folder: "/principales2"
 
 collections:
