@@ -2,11 +2,67 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Admin</title>
+    <title>Admin con Login y Signup</title>
   </head>
   <body>
-    <!-- Cambiar de nc-root a netlify-cms-app -->
-    <div id="netlify-cms-app"></div>
+    <h2>Acceso al CMS</h2>
+    <button id="login-btn">Login</button>
+    <button id="signup-btn">Sign Up</button>
+    <button id="logout-btn" style="display:none;">Logout</button>
+
+    <div id="netlify-cms-app" style="margin-top:20px;"></div>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/netlify-cms@^2.10.87/dist/netlify-cms.js"></script>
+
+    <script>
+      var identity = netlifyIdentity.init();
+
+      // Botones
+      const loginBtn = document.getElementById('login-btn');
+      const signupBtn = document.getElementById('signup-btn');
+      const logoutBtn = document.getElementById('logout-btn');
+
+      // Cuando el usuario haga login, ocultamos botones y mostramos CMS
+      identity.on('login', user => {
+        alert('Bienvenido ' + user.email);
+        loginBtn.style.display = 'none';
+        signupBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline';
+        // Aquí puedes mostrar el CMS si quieres controlarlo manualmente
+        document.getElementById('netlify-cms-app').style.display = 'block';
+      });
+
+      // Cuando el usuario hace logout, ocultamos CMS y mostramos botones
+      identity.on('logout', () => {
+        alert('Sesión cerrada');
+        loginBtn.style.display = 'inline';
+        signupBtn.style.display = 'inline';
+        logoutBtn.style.display = 'none';
+        document.getElementById('netlify-cms-app').style.display = 'none';
+      });
+
+      // Abrir ventana login o signup
+      loginBtn.addEventListener('click', () => {
+        identity.open('login');
+      });
+      signupBtn.addEventListener('click', () => {
+        identity.open('signup');
+      });
+      logoutBtn.addEventListener('click', () => {
+        identity.logout();
+      });
+
+      // Al cargar la página, ocultamos el CMS hasta que el usuario esté logueado
+      document.getElementById('netlify-cms-app').style.display = 'none';
+
+      // Si ya está logueado cuando recarga, mostramos CMS y botones adecuados
+      if (identity.currentUser()) {
+        loginBtn.style.display = 'none';
+        signupBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline';
+        document.getElementById('netlify-cms-app').style.display = 'block';
+      }
+    </script>
   </body>
 </html>
