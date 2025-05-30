@@ -179,9 +179,9 @@ fetch('https://opensheet.elk.sh/1Z0QMIwO6au52CieJTlbuxpy1A7SGDBePsKFJxlvz6DE/car
     const carrusel = document.querySelector('.carrusel-imagenes');
     console.log("Datos recibidos:", data);
     data.forEach(row => {
-      console.log("Fila:", row);
-      if(row.url && row.nombre) {
-        console.log("Agregando imagen:", row.url, row.nombre);
+     console.log("Fila recibida:", row);
+  if(row.url && row.nombre) {
+    console.log("Agregando imagen:", row.url, row.nombre);
         const img = document.createElement('img');
         img.src = row.url;
         img.alt = row.nombre;
