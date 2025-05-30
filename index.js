@@ -173,3 +173,145 @@ btnBajar.addEventListener('touchend', function() {
 
 
 
+
+
+
+
+
+
+
+
+// Script para cargar automáticamente las nuevas imágenes del CMS
+// Coloca este script al final de tu página HTML, antes del </body>
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadNewImages();
+});
+
+async function loadNewImages() {
+    const carruselContainer = document.querySelector('.carrusel-imagenes');
+    
+    try {
+        // Intentar cargar archivos del CMS
+        const response = await fetch('/principales2/');
+        
+        if (!response.ok) {
+            console.log('No se pudo acceder automáticamente. Usando método alternativo...');
+            await loadImagesFromFileList();
+            return;
+        }
+        
+        const text = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const links = doc.querySelectorAll('a[href$=".md"]');
+        
+        for (let link of links) {
+            const filename = link.getAttribute('href');
+            await loadImageFromMarkdown(filename, carruselContainer);
+        }
+        
+        // Si no encontró ninguna imagen nueva, intentar método alternativo
+        if (links.length === 0) {
+            await loadImagesFromFileList();
+        }
+        
+    } catch (error) {
+        console.log('Error cargando imágenes automáticamente:', error);
+        await loadImagesFromFileList();
+    }
+}
+
+// Método alternativo: buscar archivos de imagen directamente
+async function loadImagesFromFileList() {
+    const carruselContainer = document.querySelector('.carrusel-imagenes');
+    
+    // Lista de posibles nombres de archivos nuevos
+    // El cliente puede agregar aquí los nombres de las nuevas imágenes
+    const newImageFiles = [
+        'nueva-imagen-1.jpg',
+        'nueva-imagen-2.jpg',
+        'nueva-imagen-3.png',
+        // Agregar más nombres de archivo aquí cuando el cliente suba nuevas imágenes
+    ];
+    
+    for (let filename of newImageFiles) {
+        try {
+            // Verificar si la imagen existe
+            const response = await fetch(`/principales2/${filename}`);
+            if (response.ok) {
+                // Crear y agregar la nueva imagen al carrusel
+                const newImg = document.createElement('img');
+                newImg.src = `/principales2/${filename}`;
+                newImg.alt = filename.replace(/\.[^/.]+$/, ""); // Quitar extensión para alt
+                
+                // Agregar al final del carrusel
+                carruselContainer.appendChild(newImg);
+                
+                console.log(`Imagen agregada: ${filename}`);
+            }
+        } catch (error) {
+            console.log(`Imagen ${filename} no encontrada`);
+        }
+    }
+}
+
+// Cargar imagen desde archivo markdown del CMS
+async function loadImageFromMarkdown(filename, container) {
+    try {
+        const response = await fetch(`/principales2/${filename}`);
+        const text = await response.text();
+        
+        // Extraer información del archivo markdown
+        const imagenMatch = text.match(/imagen:\s*(.+)/);
+        const altMatch = text.match(/alt:\s*(.+)/);
+        
+        if (imagenMatch) {
+            const imagePath = imagenMatch[1].trim();
+            
+            // Verificar que no sea una imagen que ya existe
+            const existingImages = container.querySelectorAll('img');
+            let imageExists = false;
+            
+            for (let img of existingImages) {
+                if (img.src.includes(imagePath)) {
+                    imageExists = true;
+                    break;
+                }
+            }
+            
+            // Solo agregar si no existe
+            if (!imageExists) {
+                const newImg = document.createElement('img');
+                newImg.src = imagePath;
+                newImg.alt = altMatch ? altMatch[1].trim() : 'Nueva imagen';
+                
+                // Agregar al final del carrusel
+                container.appendChild(newImg);
+                
+                console.log(`Nueva imagen agregada desde CMS: ${imagePath}`);
+            }
+        }
+    } catch (error) {
+        console.log(`Error cargando ${filename}:`, error);
+    }
+}
+
+// Función para actualizar manualmente (opcional)
+function agregarImagenManual(nombreArchivo, textoAlt = '') {
+    const carruselContainer = document.querySelector('.carrusel-imagenes');
+    const newImg = document.createElement('img');
+    
+    newImg.src = `/principales2/${nombreArchivo}`;
+    newImg.alt = textoAlt || nombreArchivo.replace(/\.[^/.]+$/, "");
+    
+    // Agregar al final
+    carruselContainer.appendChild(newImg);
+    
+    console.log(`Imagen agregada manualmente: ${nombreArchivo}`);
+}
+
+
+
+
+
