@@ -244,11 +244,11 @@ header h1::after {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.2s, transform 0.2s;
-  color: #6b3400;
+  color: #000000;
 }
 .categorias .boton-pequeno:hover {
   background: #ff78ae;
-  color: #fff;
+  color: #000000;
   transform: scale(1.04);
 }
 
